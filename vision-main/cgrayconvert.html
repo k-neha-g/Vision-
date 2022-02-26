@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Vision To Learn </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+ html {
+            overflow: auto;
+        }
+          
+        html,
+        body,
+        div,
+        iframe {
+            margin: 0px;
+            padding: 0px;
+            height: 67.3%;
+        }
+          
+        iframe {
+            display: block;
+            width: 44.6%;
+            border: 1px solid black;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .cgray{
+          height: 500px;
+        }
+        </style>
+
+   </head>
+<body>
+ 
+ <br>
+    <div class="cgray" style="height: 100%; width: 100%;">
+    <b style="margin-left:20%;">Code</b><br><br>
+    <!-- HTML generated using hilite.me --><div style="background: #111111; overflow:auto;width:40%;height: 110%;border:solid black;border-width:.1em .1em .1em .1em;padding:.2em .6em;margin-left: 23%;"><pre style="margin: 0; line-height: 125%"><span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">cv2</span>
+<span style="color: #ffffff">capture</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">cv2.VideoCapture(</span><span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">)</span>
+  
+<span style="color: #fb660a; font-weight: bold">while</span><span style="color: #ffffff">(True):</span>
+      
+    <span style="color: #ffffff">ret,</span> <span style="color: #ffffff">frame</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">capture.read()</span>
+ 
+    <span style="color: #ffffff">grayFrame</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">cv2.cvtColor(frame,</span> <span style="color: #ffffff">cv2.COLOR_BGR2GRAY)</span>
+ 
+    <span style="color: #ffffff">cv2.imshow(</span><span style="color: #0086d2">&#39;video gray&#39;</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">grayFrame)</span>
+    <span style="color: #ffffff">cv2.imshow(</span><span style="color: #0086d2">&#39;video original&#39;</span><span style="color: #ffffff">,</span> <span style="color: #ffffff">frame)</span>
+      
+    <span style="color: #fb660a; font-weight: bold">if</span> <span style="color: #ffffff">cv2.waitKey(</span><span style="color: #0086f7; font-weight: bold">1</span><span style="color: #ffffff">)</span> <span style="color: #ffffff">==</span> <span style="color: #0086f7; font-weight: bold">27</span><span style="color: #ffffff">:</span>
+        <span style="color: #fb660a; font-weight: bold">break</span>
+  
+<span style="color: #ffffff">capture.release()</span>
+<span style="color: #ffffff">cv2.destroyAllWindows()</span>
+</pre></div><br><br>
+<button style="margin-left:40%;height: 50px;width: 70px;font-size: 30px;" onclick="display()">Test</button><br><br>
+
+          <div style="height: 700px;overflow: hidden;" id="cam" style="border: 1px solid black;">
+          
+          </div>
+  </section>
+  
+  <script src="script.js">  </script>
+  <script type="text/javascript">
+    function display(){
+      document.getElementById("cam").innerHTML = "<iframe id=\"cam\"src=\"cam.html\"  frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\" scrolling=\"auto\"style=\"margin-left: 20%;\"></iframe>"
+    }
+  </script>
+     
+</div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+
+<style>
+body {
+    font-family: 'Open Sans';font-size: 18px;
+    text-align: justify;
+  	text-justify: inter-word;
+}
+    #contents{
+      display: none;
+    }
+    #loader{
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 300px;
+      height: 100px;
+    }
+    #loader h3{
+      width: 400px;
+    }
+    .blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+body{
+	 padding: 2%;padding-right: 8%;padding-left: 8%;line-height: 1.6;
+}
+@media (max-width: 420px) { /*420px*/
+		iframe{
+		width: 220px;
+		height:180px ;
+	}
+  body{
+    padding: 0.2%;
+    font-size: 14px;
+    padding-right: 	1%;
+	line-height: 1.6;
+    
+  }
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}*/
+</style>
+  <script type="text/javascript">
+      window.onload=function(){
+        document.getElementById('loader').style.display= "none";
+        document.getElementById('contents').style.display= "block";
+      }
+  </script>
+	<title></title>
+</head>
+<!-- <body style="overflow: hidden; "> -->
+<body">
+
+	<div id="loader">
+		<h3 style="margin-left: 0px;" class="blink_me">Please hold on for a moment...</h3>
+	</div>
+		<div id="contents">
+	<p>
+		<h3>What is computer vision?</h3>
+
+	<ol>
+		<li>
+			Computer vision deals with the scientific field that deals with now  computer can understand the digital images as well as videos . <br>From another perspective , it’s a technological alternate to the human vision.
+
+		</li>
+			<br>
+		<li>
+			If AI enables computers to think, computer vision enables them to see, observe and understand.
+		</li>
+			<br>
+		<li>
+			Computer vision works much the same as human vision, except humans have a head start. Human sight has the advantage of lifetimes of context to train how to tell objects apart, how far away they are, whether they are moving and whether there is something wrong in an image.
+		</li>
+			<br><br>
+
+	</ol>
+</p>
+
+<p>
+		<h3>Significance of Computer Vision </h3>
+
+	<ol>
+		<li>
+			Computer vision is an interdisciplinary scientific field that deals with how computers can be made to gain high level understanding from digital images or videos 
+
+		</li>
+			<br>
+		<li>
+			From the perspective of engineering it seeks to automate tasks that the human visual system can do. 
+		</li>
+			<br><br>
+
+	</ol>
+</p>
+
+	<p>
+		<h3>Applications of Computer Vision </h3>
+		<ul>
+			<li>
+				<b>Optical Character Recognition (OCR):</b> Recognizing and identifying text in documents, a scanner does this.
+
+			</li><br>
+			
+			<li>
+				<b>Vision Biometrics:</b> Recognizing people who have been missing through iris patterns.
+
+			</li><br>
+			
+			<li>
+				<b>Object Recognition:</b> Great for retail and fashion to find products in real-time based off of an image or scan.
+
+			</li><br>
+			
+			<li>
+				<b>Special Effects:</b> Motion capture and shape capture, any movie with CGI.
+
+			</li><br>
+			
+			<li>
+				<b>3-D Printing and Image Capture:</b> Used in movies, architectural structures, and more.
+				
+			</li><br>
+			
+			<li>
+				<b>Sports:</b> In a game when they draw additional lines on the field, yup computer vision.
+
+			</li><br>
+
+			<li>
+				<b>Social Media:</b> Anything with a story that allows you to wear something on your face.
+
+			</li><br>
+
+			<li>
+				<b>Smart Cars:</b> Through computer vision they can identify objects and humans.
+			</li><br>
+
+			<li>
+				<b>Medical Imaging:</b> 3D imaging and image guided surgery.
+				
+			</li><br>
+		</ul>
+	</p>
+	<p><br>
+		<h3> Introduction to OpenCV </h3>
+		<ol style="list-style: none;">
+			<li>
+			We will be learning the basics and the examples implemented using python language.<br><br>			
+			<ul>
+				<li>
+					Most popular open source computer vision library.  
+				</li><br>
+				<li>
+				Orginally developed by intel not supported by many companies . It have more than 2500 optimized algorithms. 
+				</li>
+			</ul>
+			</li>
+		</ol><br>
+
+			<b>OpenCV-Python</b> is a library of Python bindings designed to solve computer vision problems.
+			OpenCV is a huge open-source library for computer vision, machine learning, and image processing. OpenCV supports a wide variety of programming languages like Python, C++, Java, etc. what ever the language you are comfortable in you can do coding and include the opencv library and it has very simple understandable documentation along with a very supportive community .
+ 			It can process images and videos to identify objects, faces, or even the handwriting of a human. 
+			If you want to learn more about opencv , you can go through this link:&nbsp; <a href="https://opencv.org/">opencv.org</a>
+		<br><br>Completed Successfully!<br><br>
+
+		<h3> Videos</h3>
+		<iframe width="320" height="215"
+src="https://www.youtube.com/embed/RT2NygId7ds">
+</iframe>
+	</p>
+</div><br><br><br><br><br><br><br><br>
+</body>
+</html>

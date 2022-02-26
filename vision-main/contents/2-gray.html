@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+
+<style>
+body {
+    font-family: 'Open Sans';font-size: 18px;
+    text-align: justify;
+  	text-justify: inter-word;
+}
+    #contents{
+      display: none;
+    }
+    #loader{
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 300px;
+      height: 100px;
+    }
+    #loader h3{
+      width: 400px;
+    }
+    .blink_me {
+  animation: blinker 1s linear infinite;
+}
+	#video{
+		display: none;
+    filter: grayscale(100%);
+
+	}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+body{
+	 padding: 2%;padding-right: 8%;padding-left: 8%;
+	 line-height: 1.6;
+}
+button{
+	padding: 8px;
+	background: black;
+	color: white;
+	font-size: 20px;
+	border: 1px solid black;
+	border-radius: 8px;
+}
+button:hover{
+	background: white;
+	color: black;
+}
+/*p{
+	line-height: 1.6;
+}*/
+@media (max-width: 420px) { /*420px*/
+	img{
+	    object-fit: scale-down;
+	    width: 50%;
+}
+	#video{
+		height: 100%;
+		width: 100%;
+	}
+	button{
+		font-size: 16px;
+	}
+  body{
+    padding: 0.2%;
+    font-size: 14px;
+    padding-right: 	1%;
+    line-height: 1.6;
+  }
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}*/
+</style>
+  <script type="text/javascript">
+      window.onload=function(){
+        document.getElementById('loader').style.display= "none";
+        document.getElementById('contents').style.display= "block";
+      }
+  </script>
+	<title></title>
+</head>
+<!-- <body style="overflow: hidden; "> -->
+<body>
+
+	<div id="loader">
+		<h3 style="margin-left: 0px;" class="blink_me">Please hold on for a moment...</h3>
+	</div>
+		<div id="contents">
+	<p>
+		<h2>Convert to Gray Scale</h2>
+		Grayscale is the process in which we convert an image from different color spaces(RGB, HSV, CMYK,etc) to the shades of gray. A grayscale image is simply one in which the only colors are shades of gray. The reason for differentiating such images from any other sort of color image is that less information needs to be provided for each pixel.<br><br> Grayscale images are very common, in part because much of today's display and image capture hardware can only support 8-bit images. In addition, grayscale images are entirely sufficient for many tasks and so there is no need to use more complicated and harder-to-process color images. <br><Br>
+<br>
+<!-- HTML generated using hilite.me --><div style="background: #111111; overflow:auto;width:auto;border:solid black;border-width:.1em .1em .1em .1em;padding:.2em .1em;"><table><tr><td><pre style="margin: 0; line-height: 125%;color: gray;"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #fb660a; font-weight: bold">import</span> <span style="color: #ffffff">cv2</span>    
+<span style="color: #ffffff">cap</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">cv2.VideoCapture(</span><span style="color: #0086f7; font-weight: bold">0</span><span style="color: #ffffff">)</span>  
+  
+<span style="color: #fb660a; font-weight: bold">while</span><span style="color: #ffffff">(True):</span>  
+    <span style="color: #ffffff">ret,</span> <span style="color: #ffffff">frame</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">cap.read()</span>    
+
+    <span style="color: #008800; font-style: italic; background-color: #0f140f">#converting each frame into gray inside the loop</span>
+    <span style="color: #ffffff">gray_image</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">cv2.cvtColor(frame,</span> <span style="color: #ffffff">cv2.COLOR_BGR2GRAY)</span>
+
+    <span style="color: #008800; font-style: italic; background-color: #0f140f">#Displaying the gray frame</span>
+    <span style="color: #ffffff">cv2.imshow(</span><span style="color: #0086d2">&#39;gray cam&#39;</span><span style="color: #ffffff">,gray_image)</span>  
+    <span style="color: #fb660a; font-weight: bold">if</span> <span style="color: #ffffff">cv2.waitKey(</span><span style="color: #0086f7; font-weight: bold">1</span><span style="color: #ffffff">)</span> <span style="color: #ffffff">&amp;</span> <span style="color: #0086f7; font-weight: bold">0xFF</span> <span style="color: #ffffff">==</span> <span style="color: #ffffff">ord(</span><span style="color: #0086d2">&#39;q&#39;</span><span style="color: #ffffff">):</span>  
+      <span style="color: #fb660a; font-weight: bold">break</span>  
+  
+<span style="color: #ffffff">cap.release()</span>  
+<span style="color: #ffffff">cv2.destroyAllWindows()</span>
+</pre></td></tr></table></div>
+
+<p><button id="btn">Test the code</button><br><br>
+	<center><video autoplay id="video"></video></center> 
+	</p>
+</p>
+<p>
+	<ul>
+		<li><b>cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY):</b> Converts the frame into gray scale. The detail 
+		 explanation of the of different color parameters is provided <a href="https://docs.opencv.org/3.4/d8/d01/group__imgproc__color__conversions.html" target="_blank">here</a>.</li>
+	</ul>
+
+	<h4>Ouput:</h4>
+	<img src="../image/out2.png">
+		<br><br>Completed Successfully!
+</p>
+
+</div><br><br><br><br><br><br><br>
+
+<script type="text/javascript">
+	document.getElementById("btn").addEventListener("click", dis);
+	function dis(){
+			if(document.getElementById("video").style.display !="block"){
+				document.getElementById("video").style.display="block";
+				if(navigator.mediaDevices.getUserMedia){
+            navigator.mediaDevices.getUserMedia({video:true})
+            .then(function(s){
+                video.srcObject = s;
+            });
+           
+        }
+				document.getElementById("btn").innerHTML ="Close Camera";
+
+    
+    }
+    else{
+    	navigator.mediaDevices.getUserMedia({video: false})
+    	document.getElementById("video").style.display="none";
+    	const mediaStream = video.srcObject;
+
+			// Through the MediaStream, you can get the MediaStreamTracks with getTracks():
+			const tracks = mediaStream.getTracks();
+
+			// Tracks are returned as an array, so if you know you only have one, you can stop it with: 
+			tracks[0].stop();
+			document.getElementById("btn").innerHTML ="Test the code";
+
+    	}
+		}
+	 
+</script>
+</body>
+</html>
